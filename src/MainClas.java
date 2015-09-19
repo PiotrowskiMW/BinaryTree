@@ -1,6 +1,14 @@
 import java.util.ArrayList;
 
+import org.jfree.ui.RefineryUtilities;
 
+/**
+ * 
+ * @author Marcin Piotrowski
+ * Class containing main function.
+ * 
+ *
+ */
 public class MainClas{
 	public static void main(String[] args)
 	{
@@ -17,6 +25,9 @@ public class MainClas{
 		ArrayList<Double> scores = ins.programLoop(newTree,input);
 		System.out.println("Input: "+ input.toString());
 		System.out.println("Scores: "+ scores.toString());
-		Window neo = new Window();
+		final PlotGraph demo = new PlotGraph("Binary tree ratio",input,scores);
+	    demo.pack();
+	    RefineryUtilities.centerFrameOnScreen(demo);
+	    demo.setVisible(true);
 	}
 }
